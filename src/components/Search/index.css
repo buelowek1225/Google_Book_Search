@@ -1,0 +1,18 @@
+.searchPane {
+    outline-color: black;
+    outline-style: solid;
+    margin: 20px;
+    height: 220px;
+}
+
+.formSpace {
+    margin: 20px;
+}
+
+.btn {
+    width: 120px;
+}
+
+.form-control {
+    width: 100%;
+}

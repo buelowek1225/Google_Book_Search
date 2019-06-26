@@ -1,0 +1,31 @@
+.container1 {
+    outline-color: black;
+    outline-style: solid;
+    margin: 20px;
+  }
+  
+  .resultsContainer {
+    margin: 10px;
+    padding:10px;
+  }
+  
+  .boxEachResult {
+    outline-color: black;
+    outline-style: solid;
+    margin: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  
+  .author {
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  
+  .bookDescrip {
+    margin: 20px
+  }
