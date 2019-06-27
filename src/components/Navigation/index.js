@@ -32,7 +32,7 @@ import {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">
+            <NavbarBrand href="/search">
                 Google Books
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
