@@ -31,7 +31,7 @@ export default class SearchBooks extends React.Component {
   handleSearchRequest = event => {
     // prevents default refresh
     event.preventDefault();
-    API.getBooks(this.state.search)
+    API.searchBooks(this.state.search)
     .then(res => {
       console.log(res.data.items);
       this.setState({
@@ -40,6 +40,23 @@ export default class SearchBooks extends React.Component {
 
     })
     .catch(err => console.log(err));
+  }
+
+  // handleSaveRequest bring data from the props and assigns it to the post data variable/object
+  handleSaveRequest = data => {
+    // console.log(data);
+    const postData = {
+      title: data.title,
+      authors: data.authors,
+      description: data.description,
+      image: data.image,
+      link: data.link
+    }
+    // adding the data to the database
+    API.postBook(postData)
+      .then(function (response) {
+        console.log("done");
+      })
   }
 
   render () {
@@ -58,10 +75,11 @@ export default class SearchBooks extends React.Component {
           this.state.books.map( (book, i) => <GoogleBooks 
             key={i}
             title={book.volumeInfo.title}
-            author={book.volumeInfo.authors}
+            authors={book.volumeInfo.authors}
             description={book.volumeInfo.description}
             image={book.volumeInfo.imageLinks.smallThumbnail}
             link={book.volumeInfo.previewLink}
+            handleSaveRequest={this.handleSaveRequest}
           />)
         }
         </div>

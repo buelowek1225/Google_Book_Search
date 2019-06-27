@@ -1,22 +1,20 @@
-import React from "react";
-import './index.css';
+// may need to remove components to navigate to import files
+import React from 'react';
+import '../../App.css';
+import { Button } from 'reactstrap';
 
-function SavedBook() {
+function SavedBook(props) {
   return (
-    <div className="container1">
-      <div className="resultsContainer">
-        <h4>Saved Books</h4>
-          <div className="boxEachResult">
-            <div className="row">
-              <div className="col-md-12">
-                <h5 className= "title">Title</h5>
-                <h6 className="author"> Written By: J K Rowling</h6>
-                <img src="https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone#/media/File:Harry_Potter_and_the_Philosopher's_Stone_Book_Cover.jpg" class="rounded float-left" alt="exampleimage"></img>
-                <h6>Harry Potter</h6>
-                <p className="bookDescrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
+    <div className="boxEachResult">
+      <div className="row">
+        <div className="col-md-12">
+          <h5 className= "title">{props.title}</h5>
+          <Button className="float-right btn-v" color="secondary"><a href={props.link} className="link">View</a></Button>{' '}
+          <Button onClick={() => props.handleSaveRequest(props)} className="float-right btn-s" color="secondary">Delete</Button>{' '}
+          <h6 className="author">Author(s): {props.author}</h6>
+          <img src={props.image} class="rounded float-left bookImage" alt="exampleimage"></img>
+          <h6 className="bookDescrip">{props.description}</h6>
+        </div>
       </div>
     </div>
   );

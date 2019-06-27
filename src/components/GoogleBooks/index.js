@@ -10,7 +10,7 @@ function GoogleBooks(props) {
             <div className="col-md-12">
               <h5 className= "title">{props.title}</h5>
               <Button className="float-right btn-v" color="secondary"><a href={props.link} className="link">View</a></Button>{' '}
-              <Button className="float-right btn-s" color="secondary">Save</Button>{' '}
+              <Button onClick={() => props.handleSaveRequest(props)} className="float-right btn-s" color="secondary">Save</Button>{' '}
               <h6 className="author">Author(s): {props.author}</h6>
               <img src={props.image} class="rounded float-left bookImage" alt="exampleimage"></img>
               <h6 className="bookDescrip">{props.description}</h6>
