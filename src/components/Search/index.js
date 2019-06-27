@@ -21,7 +21,7 @@ function Search(props) {
             name="search"
             type="text"
             className="form-control"
-            placeholder="Search for a Gif"
+            placeholder="Search for a Book"
             id="search"
           />
 
